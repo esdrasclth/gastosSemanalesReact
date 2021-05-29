@@ -2,18 +2,30 @@ import React, {Fragment, useState} from 'react'
 
 const Pregunta = () => {
     const [cantidad, guardarCantidad] = useState(0);
+    const [error, guardarError] = useState(false);
 
     const definirPresupuesto = e => {
         guardarCantidad(parseInt(e.target.value, 10))
     }
 
     const agregarPresupuesto = e => {
+        e.preventDefault();
 
+        //Validar
+        if(cantidad < 1 || isNaN(cantidad)) {
+            guardarError(true);
+            return;
+        }
+
+        //Si pasa la validacion
+        guardarError(false);
     }
 
     return ( 
         <Fragment>
             <h2>Coloca tu presupuesto</h2>
+
+            {error ?  : null}
 
             <form onSubmit={agregarPresupuesto}>
                 <input 
