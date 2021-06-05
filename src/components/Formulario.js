@@ -3,7 +3,7 @@ import React, { useState } from 'react'
 const Formulario = () => {
     return (
         <form action="">
-            <h2>Tus gastos aqui</h2>
+            <h2>Agrega tus gastos aqui</h2>
 
             <div className="campo">
                 <label htmlFor="">Nombre gasto</label>
